@@ -5,10 +5,10 @@ import java.util.List;
 
 import br.com.alura.gerenciador.modelo.Banco;
 import br.com.alura.gerenciador.modelo.Empresa;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class ListaEmpresas implements Acao{
 
@@ -19,9 +19,11 @@ public class ListaEmpresas implements Acao{
         Banco banco = new Banco();
         List<Empresa> lista = banco.getEmpresas();
 
-        request.setAttribute("empresas", lista);
-
-        return "forward:listaEmpresas.jsp";
+        request.setAttribute("empresas", lista);      
+       
+    	 return "forward:listaEmpresas.jsp";
+    
+       
     }
 
 }

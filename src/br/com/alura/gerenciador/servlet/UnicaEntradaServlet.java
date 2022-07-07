@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
 import br.com.alura.gerenciador.acao.Acao;
@@ -30,11 +32,12 @@ public class UnicaEntradaServlet extends HttpServlet {
 
 	    String paramAcao = request.getParameter("acao"); 
         String nomeDaClasse = "br.com.alura.gerenciador.acao." + paramAcao;
-
+     
 	    String nome;
 	    try {
 	        Class classe = Class.forName(nomeDaClasse);//carrega a classe com o nome 
-	        Acao acao = (Acao) classe.newInstance(); 	        
+	        @SuppressWarnings("deprecation")
+			Acao acao = (Acao) classe.newInstance(); 	        
 	        nome = acao.executa(request, response);
 	    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
 	        throw new ServletException(e);

@@ -12,5 +12,13 @@
     <servlet-name>OiMundoServlet</servlet-name>
     <url-pattern>/ola</url-pattern>
   </servlet-mapping>
-
-</web-app>
+	<filter>
+	    <filter-name>CF</filter-name>
+	    <filter-class>br.com.alura.gerenciador.servlet.ControladorFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+	    <filter-name>CF</filter-name>
+	    <url-pattern>/entrada</url-pattern>
+	</filter-mapping>
+	</web-app>
