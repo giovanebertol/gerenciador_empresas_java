@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class AutorizacaoFilter
  */
-@WebFilter("/entrada")
+//@WebFilter(urlPatterns="/entrada")
 public class AutorizacaoFilter implements Filter {
 
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
@@ -24,7 +24,7 @@ public class AutorizacaoFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
         String paramAcao = request.getParameter("acao");
-
+        System.out.println("Autorização Filter");
         HttpSession sessao = request.getSession();
         boolean usuarioNaoEstaLogado = (sessao.getAttribute("usuarioLogado") == null);
         boolean ehUmaAcaoProtegida = !(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));
@@ -32,7 +32,7 @@ public class AutorizacaoFilter implements Filter {
             response.sendRedirect("entrada?acao=LoginForm");
             return;
         }
-
+      
         chain.doFilter(request, response);
 
     }

@@ -9,8 +9,7 @@ import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebFilter;
 
-@WebFilter(urlPatterns="/entrada")
-
+//@WebFilter(urlPatterns="/entrada")
 public class MonitoramentoFilter implements Filter {
 
     @Override
@@ -24,7 +23,8 @@ public class MonitoramentoFilter implements Filter {
         chain.doFilter(request, response);
 
         long depois = System.currentTimeMillis();
-
+        
+        System.out.println("Monitoramente Filter");
         System.out.println("Tempo de execução " + (depois - antes));
 
     }

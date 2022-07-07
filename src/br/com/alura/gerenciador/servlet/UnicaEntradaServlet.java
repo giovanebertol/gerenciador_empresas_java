@@ -21,7 +21,7 @@ import br.com.alura.gerenciador.acao.RemoveEmpresa;
 /**
  * Servlet implementation class UnicaEntradaServlet
  */
-@WebServlet("/entrada")
+//@WebServlet("/entrada")
 public class UnicaEntradaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
