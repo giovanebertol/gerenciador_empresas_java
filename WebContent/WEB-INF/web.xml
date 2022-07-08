@@ -36,14 +36,5 @@
     <filter-name>CF</filter-name>
     <url-pattern>/entrada</url-pattern>
   </filter-mapping>
-  <servlet>
-    <description></description>
-    <display-name>EmpresasService</display-name>
-    <servlet-name>EmpresasService</servlet-name>
-    <servlet-class>br.com.alura.gerenciador.servlet.EmpresasService</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>EmpresasService</servlet-name>
-    <url-pattern>/empresas</url-pattern>
-  </servlet-mapping>
+
 </web-app>
